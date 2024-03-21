@@ -15,11 +15,11 @@ mongoose.connect('mongodb+srv://romnick:1234@romnickdb.e14diyv.mongodb.net/image
 })
 
 app.use(cors({
-    origin:['http://localhost:5173'],
+    origin:['https://image-upload-react-beryl.vercel.app'],
     methods:['POST','GET']
 }))
 app.use(express.json())
-app.post('/save', async(req,res) =>{
+app.post('/', async(req,res) =>{
     const {imageUrl} = req.body
     try {
         const saveImage = new Image({image:imageUrl})

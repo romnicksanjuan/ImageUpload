@@ -6,7 +6,7 @@ import axios from 'axios'
 const Display = () => {
     const [image, setImage] = useState([])
     useEffect(() => {
-        axios.get('http://localhost:3000/display')
+        axios.get('https://image-upload-server.vercel.app/display')
             .then(res => setImage(res.data))
             .catch(err => console.error(err))
     }, [])
