@@ -8,7 +8,8 @@ import {Link} from 'react-router-dom'
 const InsertImage = () => {
   const [image, setImage] = useState(null);
   const [progress, setProgress] = useState(0);
-  const [url, setUrl] = useState()
+  const [message, setMessage] = useState()
+
 
   const handleChange = (e) => {
     if (e.target.files[0]) {
@@ -43,7 +44,7 @@ const InsertImage = () => {
             // You can use the URL to display the image or store it in a database
             saveImageUrlToMongoDB(url)
            
-            
+            setMessage("successfully uploaded")
           });
       }
     );
@@ -77,6 +78,9 @@ const InsertImage = () => {
       <div>
       <Link to={'/display'}>My Gallery</Link>
       <br />
+      {
+        message && <h2>{message}</h2>
+      }
       <progress value={progress} max="100" />
       {progress > 0 && "Uploading: " + progress + "%"}
       <br />
