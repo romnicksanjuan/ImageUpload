@@ -79,7 +79,7 @@ const InsertImage = () => {
       <Link to={'/display'}>My Gallery</Link>
       <br />
       {
-        message ? <h2>{message}</h2> : <h2>Upload Failed</h2>
+        message && <h2>{message}</h2>
       }
       <progress value={progress} max="100" />
       {progress > 0 && "Uploading: " + progress + "%"}
