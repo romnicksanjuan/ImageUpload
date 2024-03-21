@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { storage } from "../firebase";
 import axios from 'axios'
+import {Link} from 'react-router-dom'
 
 const InsertImage = () => {
   const [image, setImage] = useState(null);
@@ -16,7 +17,7 @@ const InsertImage = () => {
   };
 
   const handleUpload = () => {
-    const uploadTask = storage.ref(`images/${image.name}`).put(image);
+    const uploadTask = storage.ref(`romnick/${image.name}`).put(image);
 
     uploadTask.on(
       "state_changed",
@@ -73,6 +74,7 @@ const InsertImage = () => {
 
   return (
     <div>
+      <Link to={'/display'}>My Gallery</Link>
       <progress value={progress} max="100" />
       {progress > 0 && "Uploading: " + progress + "%"}
       <br />
