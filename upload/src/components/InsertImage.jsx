@@ -50,7 +50,7 @@ const InsertImage = () => {
   };
 
   const saveImageUrlToMongoDB = (imageUrl) => {
-    axios.post('https://image-upload-server.vercel.app/', { imageUrl })
+    axios.post('https://image-upload-server.vercel.app/display', { imageUrl })
     .then(res => console.log(res))
     .catch(err => console.log(err))
   }
@@ -74,12 +74,16 @@ const InsertImage = () => {
 
   return (
     <div>
+      <div>
       <Link to={'/display'}>My Gallery</Link>
+      <br />
       <progress value={progress} max="100" />
       {progress > 0 && "Uploading: " + progress + "%"}
       <br />
       <input type="file" onChange={handleChange} />
       <button onClick={handleUpload}>Upload</button>
+      </div>
+     
     </div>
   );
 };
