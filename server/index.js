@@ -19,6 +19,8 @@ app.use(cors({
     methods:['POST','GET']
 }))
 app.use(express.json())
+
+
 app.post('/', async(req,res) =>{
     const {imageUrl} = req.body
     try {
