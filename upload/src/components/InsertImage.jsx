@@ -36,7 +36,7 @@ const InsertImage = () => {
       () => {
         // Complete function
         storage
-          .ref("images")
+          .ref("romnick")
           .child(image.name)
           .getDownloadURL()
           .then((url) => {
