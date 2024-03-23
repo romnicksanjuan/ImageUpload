@@ -43,6 +43,18 @@ app.get('/display',  async(req,res) =>{
     }
 })
 
+app.get('/view/:id', async(req,res) =>{
+    const imageId = req.params.id
+
+    try {
+        const image = await Image.findById(imageId)
+        res.json(image)
+        
+    } catch (error) {
+        console.log(error)
+    }
+})
+
 // app.post("/save", async (req, res) => {
 //     const { imageUrl } = req.body;
   
