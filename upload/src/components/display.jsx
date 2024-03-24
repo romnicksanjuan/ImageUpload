@@ -37,7 +37,7 @@ const Display = () => {
             {
                 image.map(img => (
                     <ul key={img._id}>
-                    <li>
+                    <li onClick={() => handleClick(img._id)}>
                         <img src={img.image} alt="" />
                     </li>
                     </ul>
