@@ -15,12 +15,14 @@ const InsertImage = () => {
     if (e.target.files[0]) {
       setImage(e.target.files[0]);
       setMessage('')
+      
+
     }
   };
-
+ 
   const handleUpload = () => {
     const uploadTask = storage.ref(`romnick/${image.name}`).put(image);
-
+    console.log(image.name)
     uploadTask.on(
       "state_changed",
       (snapshot) => {

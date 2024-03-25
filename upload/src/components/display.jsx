@@ -10,11 +10,22 @@ import styles from '../css/display.module.css'
 const Display = () => {
     const [image, setImage] = useState([])
     const [imageclick, setImageClick] = useState()
+    const [loader, setLoader] = useState(true)
+
     useEffect(() => {
-        axios.get('https://image-upload-server.vercel.app/display')
-            .then(res => setImage(res.data))
-            .catch(err => console.error(err))
+        fetchData();
     }, [])
+
+    const fetchData = () =>{
+        setTimeout(() => {
+            axios.get('https://image-upload-server.vercel.app/display')
+            .then(res => {
+                setImage(res.data)
+                setLoader(false)
+            })
+            .catch(err => console.error(err))
+        }, 1000);
+    }
 
     const navigate = useNavigate()
 
@@ -27,29 +38,40 @@ const Display = () => {
 
 
     return (
-        <div className={styles.main} >
 
-            <h2 className={styles.h2}>My Gallery</h2>
-
-            <div className={styles.second}>
-
-            
+        <>
             {
-                image.map(img => (
-                    <ul key={img._id}>
-                    <li onClick={() => handleClick(img._id)}>
-                        <img src={img.image} alt="" />
-                    </li>
-                    </ul>
-                ))
-                
-             }
-            
-                
-            </div>
+                loader ? <div className={styles.container}>
+                    <div className={styles.spinner}>
 
-            
-        </div>
+                    </div>
+                </div> :
+                    <div className={styles.main} >
+
+                        <h2 className={styles.h2}>My Gallery</h2>
+
+                        <div className={styles.second}>
+
+
+                            {
+                                image.map(img => (
+                                    <ul key={img._id}>
+                                        <li onClick={() => handleClick(img._id)}>
+                                            <img src={img.image} alt="" />
+                                        </li>
+                                    </ul>
+                                ))
+
+                            }
+
+
+                        </div>
+
+
+                    </div>
+            }
+        </>
+
 
 
     )
