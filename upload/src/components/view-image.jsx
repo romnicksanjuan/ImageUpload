@@ -17,7 +17,7 @@ const ViewImage = () => {
             .catch(err => console.log(err))
     }, [])
     return (
-        <div className='main'>
+        <div className='ss'>
             {
                image && <img className='imgg' src={image} alt="" />
             }
