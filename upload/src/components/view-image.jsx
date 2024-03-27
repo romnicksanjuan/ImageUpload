@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import style from '../css/view-image.module.css'
+import '../css/view-image.css'
 
 const ViewImage = () => {
     const { id } = useParams();
@@ -17,9 +17,9 @@ const ViewImage = () => {
             .catch(err => console.log(err))
     }, [])
     return (
-        <div>
+        <div className='main'>
             {
-               image && <img className={style.imgg} src={image} alt="" />
+               image && <img className='imgg' src={image} alt="" />
             }
             {
                 <h2>{mess}</h2>

@@ -1,8 +1,13 @@
+.main{
+    display: flex;
+    justify-content: center;
+}
 
 .imgg{
     margin: 10px;
     width: 700px;
     height: auto;
+    
 }
 
 @media (max-width : 800px) {
@@ -41,7 +46,7 @@
     }
 }
 
-
+/* 
 
  @media (max-width : 525px) {
     .second {
@@ -98,4 +103,4 @@
     }
 
     
-}  
+}   */
