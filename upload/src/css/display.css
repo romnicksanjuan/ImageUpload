@@ -121,7 +121,7 @@ img {
     }
 
     .main {
-        width: 100%;
+        width: 90%;
         max-width: 480px;
     }
 
@@ -135,7 +135,7 @@ img {
 
 
 
-@media(max-width : 342px) {
+@media(max-width : 375px) {
     .main {
         width: 100%;
         max-width: 342px;

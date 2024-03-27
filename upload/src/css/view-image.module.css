@@ -1,4 +1,4 @@
-/* 
+
 .imgg{
     margin: 10px;
     width: 700px;
@@ -35,15 +35,15 @@
     }
 }
 
-/* @media (max-width : 300px) {
+@media (max-width : 300px) {
     .imgg{
         width: 200px;
     }
-} */
+}
 
 
 
-/* @media (max-width : 525px) {
+ @media (max-width : 525px) {
     .second {
         width: 50%;
         background-color: green;
@@ -98,4 +98,4 @@
     }
 
     
-} */ 
+}  
