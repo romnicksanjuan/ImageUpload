@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
-import styles from '../css/display.module.css'
+import '../css/display.css'
 
 
 
@@ -41,16 +41,16 @@ const Display = () => {
 
         <>
             {
-                loader ? <div className={styles.container}>
-                    <div className={styles.spinner}>
+                loader ? <div className='container'>
+                    <div className='spinner'>
 
                     </div>
                 </div> :
-                    <div className={styles.main} >
+                    <div className='main' >
 
-                        <h2 className={styles.h2}>My Gallery</h2>
+                        <h2 className='h2'>My Gallery</h2>
 
-                        <div className={styles.second}>
+                        <div className='second'>
 
 
                             {
