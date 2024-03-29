@@ -37,9 +37,9 @@ ul {
 
     /* width: 800px; */
 
-    gap: 5px;
+    /* gap: 5px; */
 
-    margin: auto;
+    margin: 0;
     padding: 10px;
 
     place-items: center;
@@ -66,28 +66,29 @@ img {
     padding: 0;
 }
 
-@media (max-width : 800px) {
+@media (max-width : 768px) {
 
     .second {
         /* max-width: 100%; */
-        width: 80%;
+        width: 100%;
         /* background-color: red; */
+        max-width: 425px;
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
         /* width: 80%; */
         /* width: 600px; */
-        min-width: 500px;
+        min-width: 425px;
         margin: 0 auto;
     }
 
     img {
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
     }
 
     .main {
         width: 100%;
-        max-width: 800px;
+        max-width: 600px;
         /* justify-content: center; */
         /* height: 100%; */
         /* margin: 0 auto; */
@@ -104,19 +105,50 @@ img {
 }
 
 
-@media (max-width : 525px) {
+@media (max-width : 425px) {
+    .second {
+        width: 100%;
+        max-width: 375px;
+        /* background-color: green; */
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+        min-width: 375px;
+        margin: 0 auto;
+    }
+
+    img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .main {
+        width: 100%;
+        max-width: 480px;
+    }
+
+    ul {
+        padding: 0;
+        margin: 0;
+    }
+
+    ;
+}
+
+@media (max-width : 376px) {
     .second {
         width: 50%;
         /* background-color: green; */
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        /* grid-template-columns: repeat(5, 1fr); */
+        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
         min-width: 325px;
         margin: 0 auto;
     }
 
     img {
-        width: 80px;
-        height: 80px;
+        width: 61px;
+        height: 61px;
+        margin: 0;
     }
 
     .main {
@@ -134,7 +166,7 @@ img {
 
 
 
-@media(max-width : 342px) {
+@media(max-width : 320px) {
     .main {
         width: 100%;
         max-width: 342px;
@@ -145,14 +177,18 @@ img {
         /* width: 80%; */
         /* background-color: yellow; */
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        min-width: 270px;
+        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+        min-width: 300px;
         margin: 0 auto;
     }
 
+    .image{
+        gap: 0;
+    }
+
     img {
-        width: 40px;
-        height: 40px;
+        width: 55px;
+        height: 55px;
     }
 
     ul {
